@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register-CODE</title>
+    <link href="style3.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script>
+	   function showImage()
+	   {
+	   if(this.files && this.files[0])
+	   {
+	     var obj = new FileReader();
+		 obj.onload = function(data){
+		 var image = document.getElementById("image");
+		 var doc= document.getElementById("selector");
+		 image.src = data.target.result;
+		 image.style.display = "block";
+		 doc.style.display="none";
+		 }
+		 obj.readAsDataURL(this.files[0]);
+		 }
+	}
+	</script>
+	</head>
+	<body>
+<div class="item">
+<h1>Create Your Account</h1>
+<div class="content">
+<div class="border">
+<div class="thumb">
+<img src="cam.png" class="img-up" style=display="none" height="100px" id="image">
+<div class="btn btn-default btn-file">+<input type="file" id="selector" onchange="showImage.call(this)">
+</div></div><br>
+	<form class="form-horizontal">
+	<div class="input-group "><input type="text" name="fname" class="form-control" placeholder="First name"></div>
+	<div class="input-group "><input type="text" name="lname" class="form-control" placeholder="Last name"></div>
+	<div class="input-group "><input type="text" class="form-control" placeholder="Email address"></div>
+	<div class="input-group "><input type="text" class="form-control" placeholder="password"></div>
+	<div class="input-group "><textarea rows="5" cols="50" class="form-control" placeholder="Tell us about yourself...
+(your interests,hobbies likes and dislikes)"></textarea></div>
+	<div class="form-group ">
+<input type="submit" class="button" value="CREATE">
+	</form>
+	</div>
+	</div>
+	</div>
+	</div>
+	</body>
+	
+	</html>
